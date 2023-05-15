@@ -17,7 +17,7 @@
     "codegen"
   ],
   "scripts": {
-    "build": "rm -rf ./dist && tsc -p ./src",
+    "build": "(rm -rf ./dist | del /s /q dist) && tsc -p ./src",
     "prestart": "npm run build",
     "precommit": "prettier --write --config .prettierrc ./src/*.ts",
     "start": "node ./dist/index",
@@ -33,7 +33,7 @@
     "structured-log": "^0.2.0"
   },
   "devDependencies": {
-    "@types/node": "16",
+    "@types/node": "^16.11.59",
     "@types/prettier": "^1.12.2",
     "tslint": "^5.10.0",
     "typescript": "^4.8.3"

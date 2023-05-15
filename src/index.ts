@@ -242,7 +242,7 @@ function codegenAll(
     Object.values(enums).forEach(item => {
       let text = ''
       if (item.value) {
-        if (item.value.type == 'string') {
+        if (item.value.type == 'string' || item.value.hasNames) {
           text = enumTemplate(item.value.name, item.value.enumProps, options.enumNamePrefix)
         } else {
           text = typeTemplate(item.value.name, item.value.enumProps, options.enumNamePrefix)
@@ -338,7 +338,7 @@ function codegenInclude(
     if (allImport.includes(item.name) || options.includeTypes.includes(item.name)) {
       let text = ''
       if (item.value) {
-        if (item.value.type == 'string') {
+        if (item.value.type == 'string' || item.value.hasNames) {
           text = enumTemplate(item.value.name, item.value.enumProps, options.enumNamePrefix)
         } else {
           text = typeTemplate(item.value.name, item.value.enumProps, options.enumNamePrefix)
@@ -484,7 +484,7 @@ function codegenMultimatchInclude(
     if (allImport.includes(item.name) || options.includeTypes.includes(item.name)) {
       let text = ''
       if (item.value) {
-        if (item.value.type == 'string') {
+        if (item.value.type == 'string' || item.value.hasNames) {
           text = enumTemplate(item.value.name, item.value.enumProps, options.enumNamePrefix)
         } else {
           text = typeTemplate(item.value.name, item.value.enumProps, options.enumNamePrefix)
