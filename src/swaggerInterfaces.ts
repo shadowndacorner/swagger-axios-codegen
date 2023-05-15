@@ -98,7 +98,8 @@ export interface IDefinition {
   properties: IDefinitionProperties
   additionalProperties: IDefinitionProperty | boolean | undefined
   enum: any[],
-  items: IDefinitionProperty
+  items: IDefinitionProperty,
+  'x-enumNames'?: string[] | undefined
 }
 
 export interface IDefinitionProperties {
