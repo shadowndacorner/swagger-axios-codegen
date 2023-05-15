@@ -18,7 +18,7 @@ export function definitionsCodeGen(definitions: IDefinitions) {
       let result = null
       // is an enum definition,just in swagger openAPI v2
       if (v.enum) {
-        const enumDef = createDefinitionEnum(className, v.enum, v.type)
+        const enumDef = createDefinitionEnum(className, v.enum, v.type, v)
         definitionEnums[`#/definitions/${k}`] = {
           name: enumDef.name,
           value: enumDef
