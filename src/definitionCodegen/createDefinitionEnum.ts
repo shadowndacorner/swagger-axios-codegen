@@ -19,5 +19,5 @@ export function createDefinitionEnum(className: string, enumArray: any[], type: 
     : (names
       ? enumArray.map((item, index) => `'${names[index]}'=${item}`).join(',')
       : enumArray.join('|'))
-  return { name: className, enumProps: result, type: type }
+  return { name: className, enumProps: result, type: type, hasNames: !!names }
 }

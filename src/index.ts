@@ -166,7 +166,7 @@ export async function codegen(params: ISwaggerOptions) {
 
       let text = ''
       if (item.value) {
-        if (item.value.type == 'string') {
+        if (item.value.type == 'string' || item.value.hasNames) {
           text = enumTemplate(item.value.name, item.value.enumProps, options.enumNamePrefix)
         } else {
           text = typeTemplate(item.value.name, item.value.enumProps, options.enumNamePrefix)

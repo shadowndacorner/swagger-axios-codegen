@@ -72,7 +72,8 @@ export interface IDefinitionClasses {
 export interface IEnumDef {
   name: string
   enumProps: string
-  type: string
+  type: string,
+  hasNames: boolean
 }
 
 export interface IDefinitionEnum {
