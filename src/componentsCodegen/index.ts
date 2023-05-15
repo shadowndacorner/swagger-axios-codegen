@@ -20,7 +20,7 @@ export function componentsCodegen(definitions: IComponents) {
       let result = null
       // is an enum definition,just in swagger openAPI v2
       if (v.enum) {
-        const enumDef = createDefinitionEnum(className, v.enum, v.type)
+        const enumDef = createDefinitionEnum(className, v.enum, v.type, v)
         definitionEnums[`#/components/schemas/${k}`] = {
           name: enumDef.name,
           value: enumDef
