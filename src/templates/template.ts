@@ -73,7 +73,7 @@ export function classTemplate(
           p.type,
           p.format,
           p.desc,
-          false && (!strictNullChecks || !(p.validationModel as any)?.required),
+          !strictNullChecks || !(p.validationModel as any)?.required,
           useClassTransformer,
           p.isEnum || p.isType,
         )
