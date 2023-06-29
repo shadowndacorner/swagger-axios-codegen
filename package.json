@@ -17,7 +17,7 @@
     "codegen"
   ],
   "scripts": {
-    "build": "(rm -rf ./dist | del /s /q dist) && tsc -p ./src",
+    "build": "node clean.js && tsc -p ./src",
     "prestart": "npm run build",
     "precommit": "prettier --write --config .prettierrc ./src/*.ts",
     "start": "node ./dist/index",
